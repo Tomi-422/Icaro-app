@@ -4,7 +4,18 @@
     height: 60px;
     justify-content: space-around;
     flex-direction: row;
-
 }
 
+.logo{
+    width: 33%;
+}
 
+.botones {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+.cartWdg {
+    width: 33%;
+}

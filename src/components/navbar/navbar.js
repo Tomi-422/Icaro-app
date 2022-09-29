@@ -3,8 +3,8 @@ import CartWidget from "../cartWidget/cartWidget";
 
 const Navbar = () => {
     return (
-        <nav class="navbar">
-            <div> 
+        <nav class="navbar container-fluid">
+            <div class="logo"> 
                <span>Tienda Icaro</span>
             </div>
             <div class="botones">       
@@ -12,11 +12,12 @@ const Navbar = () => {
                 <button>Parapentes</button>
                 <button>Accesorios</button>
             </div>
-            <CartWidget />
+            <div class="cartWdg">
+                <CartWidget />
+            </div>
         </nav>
     )
 };
 
 export default Navbar; 
 
-//style={{alignText:"center"}}
