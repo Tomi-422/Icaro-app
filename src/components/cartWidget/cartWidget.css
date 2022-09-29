@@ -1,0 +1,11 @@
+.cartWidget {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: fit-content;
+}
+
+.cartImg {
+    width: 10%;
+    height: 10%;
+}

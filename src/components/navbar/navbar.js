@@ -1,16 +1,18 @@
 import "./navbar.css";
+import CartWidget from "../cartWidget/cartWidget";
 
 const Navbar = () => {
     return (
-        <nav style={{flexDirection: "row",  backgroundColor: "lightblue"}}>
-            <div style={{display: "flex", justifyContent: "space-between",alignItems:"center"}}>
-                <p>Tienda Icaro</p>
-                <div style={{justifySelf: "center"}}>       
-                    <button>Nosotros</button>
-                    <button>Parapentes</button>
-                    <button>Accesorios</button>
-                </div>
+        <nav class="navbar">
+            <div> 
+               <span>Tienda Icaro</span>
             </div>
+            <div class="botones">       
+                <button>Nosotros</button>
+                <button>Parapentes</button>
+                <button>Accesorios</button>
+            </div>
+            <CartWidget />
         </nav>
     )
 };
