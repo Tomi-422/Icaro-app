@@ -12,7 +12,8 @@ const ItemDetailContainer = () => {
     console.log(productId) 
 
     useEffect(()=>{
-        getProductsById(productId).then(response => {
+        getProductsById(productId)
+        .then(response => {
             setProduct(response)
         }).finally(()=> {
             setLoading(false)

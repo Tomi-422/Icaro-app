@@ -18,7 +18,6 @@ const ItemListContainer = ({greeting}) => {
             setProducts(response)
         }).catch(error=>{
             console.log(error)
-            console.log(products)
         }).finally(()=>{
             setLoading(false)
         })

@@ -3,16 +3,16 @@ import CartWidget from "../cartWidget/cartWidget";
 
 const Navbar = () => {
     return (
-        <nav class="navbar container-fluid">
-            <div class="logo"> 
+        <nav className="navbar container-fluid">
+            <div className="logo"> 
                <span>Tienda Icaro</span>
             </div>
-            <div class="botones">       
+            <div className="botones">       
                 <button>Nosotros</button>
                 <button>Parapentes</button>
                 <button>Accesorios</button>
             </div>
-            <div class="cartWdg">
+            <div className="cartWdg">
                 <CartWidget />
             </div>
         </nav>

@@ -38,7 +38,7 @@ export const getProductsById = (id) => {
    return new Promise (resolve => {
       setTimeout(()=> {
          resolve(products.find(prod => {
-            return prod.id === id
+            return prod.id === parseInt(id)
          }))
       }, 500)
    })
