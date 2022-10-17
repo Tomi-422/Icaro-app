@@ -1,11 +1,11 @@
 import './ItemDetail.css'
 import Counter from "../itemCount/itemCount"
 
-const ItemDetail = ({id, nombre, precio, stock, description}) => {
+const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
 
     const handleOnAdd = (quantity) => {
         const productToAdd = {
-            id, nombre, precio, quantity
+            id, nombre, precio, quantity, img
         }
         console.log(productToAdd)
     }
@@ -15,9 +15,9 @@ const ItemDetail = ({id, nombre, precio, stock, description}) => {
             <header className='Header'>
                 <h2 className='ItemHeader'>{nombre}</h2>
             </header>
-            {/* <picture>
+            <picture>
                 <img src={img} alt={nombre} className="ItemImg" />
-            </picture>  */}
+            </picture> 
             <section>
                 <p className='Info'>
                     Descripción: {description}

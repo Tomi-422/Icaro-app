@@ -1,6 +1,6 @@
 .CardItem {
-    width: 150px;
-    padding: 30px;
+    width: 450px;
+    padding: 5%;
     margin: 30px;
     font-size: 10px;
     background-color: papayawhip;
@@ -48,8 +48,8 @@
 }
 
 .ItemImg {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
