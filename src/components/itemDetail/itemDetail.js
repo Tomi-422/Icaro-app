@@ -5,7 +5,7 @@ const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
 
     const handleOnAdd = (quantity) => {
         const productToAdd = {
-            id, nombre, precio, quantity, img
+            id, nombre, precio, quantity, 
         }
         console.log(productToAdd)
     }
@@ -24,6 +24,9 @@ const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
                 </p>
                 <p className='Info'>
                     Precio: ${precio}
+                </p>
+                <p className='Info'>
+                    Stock: {stock}un.
                 </p>
             </section>
             <footer className='ItemFooter'>

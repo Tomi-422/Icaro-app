@@ -6,17 +6,12 @@
     flex-direction: row;
 }
 
-.logo{
+.logo img{
     height: 10%;
     width: 10%;
 }
 
 .botones {
-    width: 33%;
     display: flex;
     justify-content: center;
-}
-
-.cartWdg {
-    width: 33%;
 }

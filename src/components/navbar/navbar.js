@@ -6,8 +6,11 @@ import logo from "./assets/icaro-paragliders-logo.png"
 const Navbar = () => {
     return (
        <nav className="navbar container-fluid">
+
             <NavLink to='/'> 
-                <img src={logo} alt="logo" className="logo" />
+                <div className="logo">
+                    <img src={logo} alt="Icaro Paragliding"/>
+                </div>
             </NavLink>
             <div className="botones">       
                 <button>Nosotros</button>
