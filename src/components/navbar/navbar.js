@@ -13,9 +13,11 @@ const Navbar = () => {
                 </div>
             </NavLink>
             <div className="botones">       
-                <button>Nosotros</button>
-                <button>Parapentes</button>
-                <button>Accesorios</button>
+                <NavLink to={'/category/EN -A'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>EN -A</NavLink>
+                <NavLink to={'/category/EN -B'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>EN -B</NavLink>
+                <NavLink to={'/category/EN -C'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>EN -C</NavLink>
+                <NavLink to={'/category/EN -D'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>EN -D</NavLink>
+                <NavLink to={'/category/mini wing'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Mini wing</NavLink>
             </div>
             <div className="cartWdg">
                 <CartWidget />

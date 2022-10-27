@@ -1,14 +1,22 @@
 import './ItemDetail.css'
 import Counter from "../itemCount/itemCount"
+// import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../context/cartContext'
+
 
 const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
+
+    const { addItem } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
         const productToAdd = {
             id, nombre, precio, quantity, 
         }
-        console.log(productToAdd)
+        
+        addItem(productToAdd)
     }
+    
 
     return(
         <article className='CardItem'>
@@ -30,7 +38,7 @@ const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
                 </p>
             </section>
             <footer className='ItemFooter'>
-                <Counter onAdd={handleOnAdd} stock={stock} />
+                <Counter onAdd={handleOnAdd} stock={stock} />      
             </footer>
         </article>
     )

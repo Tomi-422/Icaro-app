@@ -94,7 +94,7 @@ const products = [{
       img:'/images/11.png',
       precio: 1200,
       stock: 10, 
-      category: "Mini Wing",
+      category: "mini wing",
       description: "El KIWI es tu fiel compañero para que el pilotaje en tierra sea divertivo y educativo, incluso cuando las condiciones del viento son exigentes."
    }
 ]
