@@ -11,7 +11,11 @@ const ItemListContainer = ({greeting}) => {
     const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
 
-    useEffect (()=>{
+    useEffect(() => {
+        document.title = 'Listado de productos'
+    }, [])
+
+    useEffect (() => {
         setLoading(true)
         const collectionRef =  categoryId
         ? query(collection(db, 'products'), where('category', '==', categoryId))

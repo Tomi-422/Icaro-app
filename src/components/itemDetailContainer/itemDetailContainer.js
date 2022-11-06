@@ -11,6 +11,9 @@ const ItemDetailContainer = () => {
 
     const { productId } = useParams()
      
+    useEffect(() => {
+        document.title = loading? 'cargando' : `Detalle ${product.nombre}`
+    })
 
     useEffect(()=>{
 

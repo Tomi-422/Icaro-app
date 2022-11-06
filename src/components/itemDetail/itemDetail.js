@@ -1,22 +1,26 @@
 import './ItemDetail.css'
 import Counter from "../itemCount/itemCount"
-// import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../../context/cartContext'
+import { Link } from 'react-router-dom'
 
 
 const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
 
-    const { addItem } = useContext(CartContext)
+    const { addItem, isInCart, getProductQuantity } = useContext(CartContext)
 
     const handleOnAdd = (quantity) => {
+        
         const productToAdd = {
-            id, nombre, precio, quantity, 
+            id, 
+            nombre, 
+            precio,
         }
         
-        addItem(productToAdd)
+        addItem(productToAdd, quantity)
     }
     
+    const quantityAdded = getProductQuantity(id)
 
     return(
         <article className='CardItem'>
@@ -38,7 +42,11 @@ const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
                 </p>
             </section>
             <footer className='ItemFooter'>
-                <Counter onAdd={handleOnAdd} stock={stock} />      
+                {
+                    ! isInCart(id) 
+                        ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded} />
+                        : <Link to='/cart' className='option'>Finalizar Compra</Link>
+                }
             </footer>
         </article>
     )
