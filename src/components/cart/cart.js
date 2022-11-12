@@ -18,11 +18,14 @@ const Cart = () => {
                 ))
             }
             <div> 
-                Precio Total: ${total}
+                Total: ${total}
             </div>
             <div>
                 <button onClick={()=> clearCart()}>Borrar carrito</button>
-                 <Link to='/checkout'>Finalizar Compra</Link> 
+                {cart <= 1 
+                    ? ""
+                    : <Link to='/checkout'>Finalizar Compra</Link>
+                }  
             </div>
         </div>
     )

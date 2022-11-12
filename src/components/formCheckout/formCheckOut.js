@@ -24,17 +24,12 @@ const FormCheckOut = ({completarDatos}) => {
         if(!name || !email || !phone || !address) {
             Swal.fire({
                 title: "Completa tus datos",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-        
+                icon: "warning"
             })
-        } else if (email != checkEmail) {
+        } else if (email !== checkEmail) {
             Swal.fire({
                 title: "Los emails no coinciden",
-                html: "Por favor, intente nuevamente",
-                buttons: true,
-                dangerMode: true,
+                html: "Por favor, intente nuevamente"
             })
         } else {
             completarDatos(
@@ -59,7 +54,7 @@ const FormCheckOut = ({completarDatos}) => {
                 <input value={checkEmail} onChange={(e) => setCheckEmail(e.target.value)} type="Confirme Email"  className="form-input"   placeholder="Email" required/>
                 <input value={phone}onChange={(e) => setPhone(e.target.value)} type="number" className="form-input"   placeholder="Teléfono"required />
             </div>
-            <button onClick = {submit}> Submit Data</button>
+            <button onClick = {submit}>Comprar</button>
         </form>
     )
 }

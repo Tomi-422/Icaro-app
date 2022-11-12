@@ -29,17 +29,15 @@ const Navbar = () => {
 
     return (
        <nav className="navbar container-fluid">
-
-            <NavLink to='/'> 
-                <div className="logo">
-                    <img src={logo} alt="Icaro Paragliding"/>
-                </div>
+            <NavLink to='/'>   
+                <img className="logo" src={logo} alt="Icaro Paragliding"/>
             </NavLink>
-            <div className="botones">       
+
+            <div>       
                 {
-                    categories.map(cat => (
-                        <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>{cat.label}</NavLink>
-                    ))
+                categories.map(cat => (
+                    <NavLink key={cat.id} to={`/category/${cat.slug}`} className={"botones"}>{cat.label}</NavLink>
+                ))
                 }
             </div>
             <div className="cartWdg">

@@ -73,19 +73,28 @@ const CheckOut = () => {
                 }, 2000)
 
                 Swal.fire({
-                    title: "Se genero la orden con exito!",
+                    title: "Se genero la orden correctamente!", 
+                    text: `El id de su compra es: ${orderAdded.id}`,
                     icon: "success",
-                    buttons: true,
-                    dangerMode: true,
-            
+                    timer: 1000
                 })
                 
             } else {
-                console.log('error')
-                //notificacion fuera de stock 
+                clearCart()
+
+                setTimeout(()=> {
+                    navigate('/')
+                }, 1000)
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lo sentimos!',
+                    text: 'Algunos de los productos seleccionados esta fuera de stock!',
+                    timer: 1000
+                })
             }
         } catch (error) {
-            console.log('error')
+            console.log("llego") 
         } finally {
             setLoading(false)
         }
@@ -95,15 +104,12 @@ const CheckOut = () => {
         return <h2>Se esta generando la orden...</h2>
     }
 
-    
     return (
         <div>
             <h1>checkout</h1>
             <h2>Complete los datos para generar la orden</h2>
             <FormCheckOut completarDatos={completarDatos} /> 
-            { personalData
-            ?<button onClick={()=> createOrder()}>Comprar</button>
-            :""}
+            { personalData? createOrder() : "" }
         </div>
     )
 }
