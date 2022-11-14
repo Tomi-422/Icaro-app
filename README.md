@@ -16,7 +16,7 @@ Install the dependencies and devDependencies and start the server. ---Follow the
 5.- Ready to edit!
 
 Deployment Link
-https://icaro-app-tomi-422.vercel.app/
+https://icaro-app-formica.vercel.app/
 
 Google Drive Link
 https://drive.google.com/drive/folders/1IW2glwsOH8YiP1XXMQjpbut1TkxNZKZd?usp=sharing
