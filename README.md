@@ -1,3 +1,4 @@
+<br>
 Tomas Francisco Formica
 Proyecto E-Commerce - Icaro Paragliding store
 This website is powered by React, HTML5 and Firebase
