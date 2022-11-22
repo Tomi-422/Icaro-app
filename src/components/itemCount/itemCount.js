@@ -17,17 +17,28 @@ const Counter = ({stock, initial=1, onAdd}) => {
     }
 
     return (
-        <div className='Counter'>          
-            <div className='Controls'>
+
+        <><div className="counter">
+            <span className="down" onClick={decrement}>-</span>
+            <h4 className="number">{quantity}</h4>
+            <span className="up" onClick={increment}>+</span>
+        </div> 
+        <button className="Button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
+        </>
+        
+    )
+}
+
+export default Counter; 
+
+
+{/* <div className="Counter">          
+            <div className="Controls">
                 <button className="Button" onClick={decrement}>-</button>
-                <h4 className='Number'>{quantity}</h4>
+                <h4 className="Number">{quantity}</h4>
                 <button className="Button" onClick={increment}>+</button>
             </div>
             <div>
                 <button className="Button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
             </div>
-       </div>
-    )
-}
-
-export default Counter; 
+       </div> */}

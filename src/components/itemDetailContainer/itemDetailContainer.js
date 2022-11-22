@@ -30,7 +30,13 @@ const ItemDetailContainer = () => {
     },[productId])
 
     if(loading) {
-        return <h2>Cargando...</h2>
+        return (
+            <><div className="spinner-border spinner" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div><div className="text">
+                    <p>cargando...</p>
+                </div></> 
+        )
     }
 
     return (

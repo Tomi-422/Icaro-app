@@ -26,15 +26,16 @@
     justify-content: space-around;
 }
 
-.ButtonDetail {
+.Button {
+    text-decoration: none;
+    border-radius: 25;
+    margin: 0 30px;
     width: auto;
     padding: 12px;
     font-size: 8px;
-    background: #8C30F5;
+    background: sandybrown;
     border-radius: 8px;
-    flex: none;
     display: flex;
-    order: 1;
     align-self: center;
     flex-grow: 0;
     justify-content: center;
@@ -45,13 +46,16 @@
     border-style: none;
     cursor: pointer;
     outline: inherit;
-}
+    font-size: larger;
+    
+  }
 
-.ItemImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.imagen {
+    display: flex;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    height: 60%;
+    width: 90%;
 }
 
 .ItemFooter {

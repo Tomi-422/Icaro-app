@@ -5,7 +5,7 @@ import { CartContext } from '../../context/cartContext'
 import { Link } from 'react-router-dom'
 
 
-const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
+const ItemDetail = ({id, nombre, precio, stock, description, img, homologation}) => {
 
     const { addItem, isInCart, getProductQuantity } = useContext(CartContext)
 
@@ -22,33 +22,31 @@ const ItemDetail = ({id, nombre, precio, stock, description, img}) => {
     
     const quantityAdded = getProductQuantity(id)
 
+
     return(
-        <article className='CardItem'>
-            <header className='Header'>
-                <h2 className='ItemHeader'>{nombre}</h2>
-            </header>
-            <picture>
-                <img src={img} alt={nombre} className="ItemImg" />
-            </picture> 
-            <section>
-                <p className='Info'>
-                    Descripción: {description}
-                </p>
-                <p className='Info'>
-                    Precio: ${precio}
-                </p>
-                <p className='Info'>
-                    Stock: {stock}un.
-                </p>
-            </section>
-            <footer className='ItemFooter'>
-                {
-                    ! isInCart(id) 
-                        ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded} />
-                        : <Link to='/cart' className='option'>Finalizar Compra</Link>
+      <><div className="card">
+      <div className="row g-0">
+        <div className="col-5 col-sm-4 ItemImg">
+          <img src={img} alt={nombre} className="img-fluid w-100" />
+        </div>
+        <div className="col-7 col-sm-8">
+          <div className="card-body">
+            <h4 className="card-title">{nombre}</h4>
+            <p className="card-text"><strong>Descripción:</strong> {description}</p>
+            <h5 className="card-title">Precio: U$D{precio}</h5>
+            <p><strong>Homologacion:</strong> {homologation}</p>
+          </div>
+            {
+              ! isInCart(id) 
+                  ? <Counter onAdd={handleOnAdd} stock={stock} initial={quantityAdded} />
+                  : <Link to='/cart' className='option text-decoration-none'>
+                    <button className="Button" type='button'>Finalizar Compra</button>
+                    </Link>
                 }
-            </footer>
-        </article>
+        </div>
+      </div>
+    </div>
+    </>
     )
 
 }

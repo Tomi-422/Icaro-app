@@ -6,7 +6,7 @@ const Item = ({id, nombre, precio, img, homologation}) => {
     return(
         <article className="CardItem">
             <picture>
-                <img src={img} alt={nombre} className="ItemImg"/>
+                <img src={img} alt={nombre} className="imagen"/>
             </picture> 
             <header className="Header">
                 <h2 className="ItemHeader">
@@ -14,15 +14,19 @@ const Item = ({id, nombre, precio, img, homologation}) => {
                 </h2>
             </header>
             <section>
-                <p className="Info">
+                <h3 className="Info">
                     Homologacion: {homologation}
-                </p>
+                </h3>
                 <p className="Info">
-                    Precio: ${precio}
+                    Precio: U$D {precio}
                 </p>
             </section>           
             <footer className='ItemFooter'>
-               <Link to={`/detail/${id}`}>Ver detalle</Link>
+               <Link className='text-decoration-none' to={`/detail/${id}`}>
+                <button className="Button" type="button">
+                    Ver Detalle
+                </button>
+               </Link>
             </footer>
         </article>
     )

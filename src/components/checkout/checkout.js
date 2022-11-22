@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import FormCheckOut from "../formCheckout/formCheckOut"
 import Swal from "sweetalert2";
 
+document.title = `Check Out`
 
 const CheckOut = () => {
     const [loading, setLoading] = useState(false)
@@ -67,34 +68,28 @@ const CheckOut = () => {
                 const orderAdded = await addDoc(orderRef, objOrder)
 
                 clearCart()
-
-                setTimeout(()=> {
-                    navigate('/')
-                }, 2000)
+                navigate('/')
 
                 Swal.fire({
                     title: "Se genero la orden correctamente!", 
                     text: `El id de su compra es: ${orderAdded.id}`,
                     icon: "success",
-                    timer: 1000
+                    timer: 5000
                 })
                 
             } else {
                 clearCart()
-
-                setTimeout(()=> {
-                    navigate('/')
-                }, 1000)
+                navigate('/')
 
                 Swal.fire({
                     icon: 'error',
                     title: 'Lo sentimos!',
                     text: 'Algunos de los productos seleccionados esta fuera de stock!',
-                    timer: 1000
+                    timer: 3000
                 })
             }
         } catch (error) {
-            console.log("llego") 
+            console.log("error en createOrder") 
         } finally {
             setLoading(false)
         }
